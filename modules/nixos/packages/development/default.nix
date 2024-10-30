@@ -33,6 +33,7 @@ in {
       gnumake
       gdb
       cmake
+      just
       vscodium
       man-pages
       man-pages-posix
