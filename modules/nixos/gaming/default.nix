@@ -30,6 +30,7 @@ in {
       gamemode
       gamescope
       lutris
+      mangohud
       steam
       sunshine
     ];

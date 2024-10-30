@@ -20,6 +20,10 @@
 }: {
   # This is the main configuration file for my desktop
   # gaming PC (AMD Ryzen 7800X3D, NVIDIA 4070Ti).
+  imports = [
+    ./hardware-configuration.nix
+  ];
+
   desktop = {
     gnome.enable = true;
   };
