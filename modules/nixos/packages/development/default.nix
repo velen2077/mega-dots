@@ -34,6 +34,8 @@ in {
       gdb
       cmake
       just
+      nixfmt-classic
+      nixpkgs-fmt
       vscodium
       man-pages
       man-pages-posix
