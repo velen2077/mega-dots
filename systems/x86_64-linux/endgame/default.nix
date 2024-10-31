@@ -43,6 +43,7 @@
     fonts.enable = true;
     kernel.cachy.enable = true;
     locale.enable = true;
+    networking.enable = true;
     nix.enable = true;
   };
 

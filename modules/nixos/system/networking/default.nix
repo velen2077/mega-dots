@@ -25,37 +25,21 @@
 }:
 with lib;
 with lib.nix-config; let
-  cfg = config.system.locale;
+  cfg = config.system.networking;
 in
 {
-  options.system.locale = with types; {
-    enable = mkOpt types.bool true "Enable locale settings";
+  options.system.networking = with types; {
+    enable = mkOpt types.bool true "Enable networking settings";
   };
 
   config = mkIf cfg.enable {
-    # Set your time zone.
-    time.timeZone = "Europe/London";
-
-    # Select internationalisation properties.
-    i18n.defaultLocale = "en_GB.UTF-8";
-
-    i18n.extraLocaleSettings = {
-      LC_ADDRESS = "en_GB.UTF-8";
-      LC_IDENTIFICATION = "en_GB.UTF-8";
-      LC_MEASUREMENT = "en_GB.UTF-8";
-      LC_MONETARY = "en_GB.UTF-8";
-      LC_NAME = "en_GB.UTF-8";
-      LC_NUMERIC = "en_GB.UTF-8";
-      LC_PAPER = "en_GB.UTF-8";
-      LC_TELEPHONE = "en_GB.UTF-8";
-      LC_TIME = "en_GB.UTF-8";
+    networking.firewall = {
+      enable = true;
+      #allowedTCPPorts = [ 47984 47989 47990 48010 ];
+      #allowedUDPPortRanges = [
+      #  { from = 47998; to = 48000; }
+      #  { from = 8000; to = 8010; }
+      #];
     };
-
-    services.xserver = {
-      xkb.layout = "gb";
-    };
-
-    # Configure console keymap
-    console.keyMap = "uk";
   };
 }
