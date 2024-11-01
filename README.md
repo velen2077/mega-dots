@@ -12,7 +12,52 @@ I am not an expert in Nix, NixOS, Home Manager or Snowfall Lib. Nor am I a devel
 
 ## Usage
 
-I'm in the process of updating this section. Please hang tight, regular service will commence shortly.
+This configuration has two primary entry-points. System and Home Manager. At the moment, I am a single user managing a single machine (though expect this to grow).
+
+| System | Description | OS | CPU | GPU |
+|---|---|---|---|---|
+| endgame | My personal computer | NixOS | AMD Ryzen 7800X3D | nVidia 4070 Ti |
+
+I have a single user that I manage through Home Manager (velen2077). You may add additional users or rename mine to inherit my existing settings - though don't forget to change my hashedPassword to something of your own otherwise you won't be able to log in.
+
+### File structure
+
+```
+.
+├── assets
+│   ├── avatar
+│   ├── images
+│   └── wallpaper
+├── flake.lock
+├── flake.nix
+├── homes
+│   └── x86_64-linux
+│       └── velen2077@endgame
+├── justfile
+├── lib
+│   └── default.nix
+├── modules
+│   ├── home
+│   │   ├── apps
+│   │   ├── cli
+│   │   └── tools
+│   └── nixos
+│       ├── desktop
+│       │   └── gnome
+│       ├── gaming
+│       ├── hardware
+│       │   ├── audio
+│       │   ├── networking
+│       │   └── nvidia
+│       ├── packages
+│       │   ├── basics
+│       │   └── development
+│       └── system
+├── README.md
+└── systems
+    └── x86_64-linux
+        └── endgame
+```
 
 ## mega-thanks
 
